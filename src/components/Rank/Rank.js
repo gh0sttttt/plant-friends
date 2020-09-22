@@ -7,7 +7,7 @@ const Rank = ({ name }) => {
   return (
     <div>
       <div className='white f2'>
-        {`welcome back, ${name}`}
+        {`welcome, ${name}`}
       </div>
     </div>
 
