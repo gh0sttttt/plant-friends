@@ -60,7 +60,6 @@ class App extends Component {
     super();
     this.state = initialState;
     this.getToken();
-
   }
 
   // GetToken
