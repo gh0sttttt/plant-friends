@@ -109,7 +109,6 @@ class App extends Component {
 
   // Show Plants Function
   showPlants = () => {
-    this.getToken();
     if (this.state.searchTerm === '') {
       alert('Having trouble finding this one... try something different!');
     } else {
@@ -131,6 +130,7 @@ class App extends Component {
     if (route === 'signout') {
       this.setState(initialState);
     } else if (route === 'home') {
+      this.getToken();
       this.setState({ isSignedIn: true });
     }
     this.setState({ route: route });
