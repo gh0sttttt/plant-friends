@@ -1,0 +1,6 @@
+.Tilt {
+  background: transparent;
+  border-radius: 50%;
+  border: 2px #fff solid;
+  z-index:-1;
+}
