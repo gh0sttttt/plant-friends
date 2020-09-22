@@ -59,10 +59,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = initialState;
+    this.getToken();
+
   }
 
   // GetToken
-
   getToken = () => {
     fetch('https://pacific-shore-35638.herokuapp.com/token')
       .then(response => response.json())
@@ -74,7 +75,6 @@ class App extends Component {
 
   // Load User
   loadUser = (data) => {
-    this.getToken();
     this.setState({
       user: {
         id: data.id,
@@ -117,6 +117,7 @@ class App extends Component {
         const response = await fetch(`https://trefle.io/api/v1/plants/search?token=${this.state.userToken}&q=${this.state.searchTerm}`);
 
         const plantData = await response.json();
+        console.log(plantData);
         if (plantData.data[0] !== undefined) {
           this.setState({ plantData: plantData.data[0] });
         } else {
