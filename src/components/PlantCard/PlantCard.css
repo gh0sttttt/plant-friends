@@ -17,6 +17,10 @@
   font-size: 22px;
 }
 
+.citation {
+  font-size: .5rem;
+}
+
 .card button {
   border: none;
   outline: 0;
