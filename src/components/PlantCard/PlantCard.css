@@ -9,7 +9,6 @@
   text-align: center;
   border: 4px solid rgba(255, 241, 120, 0.8);
   border-radius: 5px;
-  line-height: .8rem;
 }
 
 .family {
@@ -20,6 +19,12 @@
 .citation {
   font-size: .8rem;
   margin-bottom: 5px;
+}
+
+.scientific_name {
+  font-size: .6rem;
+  font-style: italic;
+  color: #555;
 }
 
 .card button {

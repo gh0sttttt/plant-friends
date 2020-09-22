@@ -10,7 +10,7 @@ const PlantCard = ({ family, common_name, image_url, year, scientific_name, auth
           <div className="card">
             <img src={image_url} className="w-100 image" alt={common_name} />
             <h1>{common_name}</h1>
-            <cite className="scientific_name">{scientific_name} - {year}</cite>
+            <p className="scientific_name">{scientific_name} - {year}</p>
             <p className="family">{family}</p>
             <p className="bib">{author}-{bibliography} </p>
             <cite className="citation">all data provided by: trefle.io</cite>
