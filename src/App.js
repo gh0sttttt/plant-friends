@@ -49,7 +49,9 @@ const initialState = {
     family: '',
     image_url: '',
     genus: '',
-    year: ''
+    year: '',
+    author: '',
+    bibliography: '',
   }
 };
 // App
@@ -115,8 +117,6 @@ class App extends Component {
         const response = await fetch(`https://trefle.io/api/v1/plants/search?token=${this.state.userToken}&q=${this.state.searchTerm}`);
 
         const plantData = await response.json();
-        console.log(plantData);
-
         if (plantData.data[0] !== undefined) {
           this.setState({ plantData: plantData.data[0] });
         } else {
@@ -164,7 +164,9 @@ class App extends Component {
               image_url={plantData.image_url}
               scientific_name={plantData.scientific_name}
               genus={plantData.genus}
-              year={plantData.year} />}
+              year={plantData.year}
+              author={plantData.author}
+              bibliography={plantData.bibliography} />}
           </div>
           : (
             route === 'signin'
