@@ -59,7 +59,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = initialState;
-    this.getToken();
   }
 
   // GetToken
@@ -71,6 +70,7 @@ class App extends Component {
       })
       .catch(err => console.log('Can not resolve token'));
   };
+
 
   // Load User
   loadUser = (data) => {
@@ -109,6 +109,7 @@ class App extends Component {
 
   // Show Plants Function
   showPlants = () => {
+    this.getToken();
     if (this.state.searchTerm === '') {
       alert('Having trouble finding this one... try something different!');
     } else {
@@ -116,7 +117,6 @@ class App extends Component {
         const response = await fetch(`https://trefle.io/api/v1/plants/search?token=${this.state.userToken}&q=${this.state.searchTerm}`);
 
         const plantData = await response.json();
-        console.log(plantData);
         if (plantData.data[0] !== undefined) {
           this.setState({ plantData: plantData.data[0] });
         } else {
