@@ -115,6 +115,7 @@ class App extends Component {
         const response = await fetch(`https://trefle.io/api/v1/plants/search?token=${this.state.userToken}&q=${this.state.searchTerm}`);
 
         const plantData = await response.json();
+        console.log(plantData);
 
         if (plantData.data[0] !== undefined) {
           this.setState({ plantData: plantData.data[0] });
